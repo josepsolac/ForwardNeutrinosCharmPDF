@@ -281,7 +281,6 @@ def mkplot_charm_pdf(iflav,ratios_uw,ratios_rw,error,R,log = False,Q=1.65):
     p = []
 
     for plot, ax in enumerate(axs.flatten()):
-        iflav = int(plot%2)
         ax2 = inset_axes(axs[plot], width = '50%', height = '25%', loc = 'lower left', bbox_to_anchor=(0.4,0.07,1.1,1.1), bbox_transform=axs[plot].transAxes)
         ax2.set_title('Error band width', fontsize = 6, pad = 2)
         for ir in range(2):
@@ -599,20 +598,20 @@ def gen_plots(iflav,error):
     R_pdf = rel_constraint_pdf(xc_uw[1],xc_rw[1])
     mkplot_charm_pdf(iflav,xc_uw,xc_rw,error,R_pdf)
 
-        # gg luminosity
-    gglumi_uw,gglumi_rw = charm_gglumi(iflav,error)
-    R_gg = rel_constraint_lumi(gglumi_uw[1],gglumi_rw[1])
-    mkplot_charm_gglumi(iflav,gglumi_uw,gglumi_rw,error,R_gg)
+    #     # gg luminosity
+    # gglumi_uw,gglumi_rw = charm_gglumi(iflav,error)
+    # R_gg = rel_constraint_lumi(gglumi_uw[1],gglumi_rw[1])
+    # mkplot_charm_gglumi(iflav,gglumi_uw,gglumi_rw,error,R_gg)
 
-        # gq luminosity
-    gqlumi_uw,gqlumi_rw = charm_gqlumi(iflav,error)
-    R_gq = rel_constraint_lumi(gqlumi_uw[1],gqlumi_rw[1])
-    mkplot_charm_gqlumi(iflav,gqlumi_uw,gqlumi_rw,error,R_gq)
+    #     # gq luminosity
+    # gqlumi_uw,gqlumi_rw = charm_gqlumi(iflav,error)
+    # R_gq = rel_constraint_lumi(gqlumi_uw[1],gqlumi_rw[1])
+    # mkplot_charm_gqlumi(iflav,gqlumi_uw,gqlumi_rw,error,R_gq)
 
-        # gc luminosity
-    gclumi_uw,gclumi_rw = charm_gclumi(iflav,error)
-    R_gc = rel_constraint_lumi(gclumi_uw[1],gclumi_rw[1])
-    mkplot_charm_gclumi(iflav,gclumi_uw,gclumi_rw,error,R_gc)
+    #     # gc luminosity
+    # gclumi_uw,gclumi_rw = charm_gclumi(iflav,error)
+    # R_gc = rel_constraint_lumi(gclumi_uw[1],gclumi_rw[1])
+    # mkplot_charm_gclumi(iflav,gclumi_uw,gclumi_rw,error,R_gc)
 
 # Calls plot generating function for all ratios
 for error in errorvec:
